@@ -1,0 +1,9 @@
+{
+  "plugins": ["prettier"],
+  "extends": ["prettier"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {}
+}

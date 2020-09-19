@@ -1,0 +1,64 @@
+{
+  "name": "pro-layout",
+  "version": "1.0.0-alpha.1",
+  "description": "Css library for building responsive and customizable layouts",
+  "main": "dist/css/pro-layout.css",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/azouaoui-med/pro-layout.git",
+  "author": "Mohamed Azouaoui <azouaoui.med@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "clean": "rimraf dist",
+    "sass": "node-sass src/scss/pro-layout.scss dist/css/pro-layout.css",
+    "sass:compressed": "node-sass src/scss/pro-layout.scss dist/css/pro-layout.min.css --output-style compressed",
+    "sass:watch": "node-sass src/scss/pro-layout.scss dist/css/pro-layout.css -w",
+    "copy:sass": "copyfiles -u 1 src/scss/* dist",
+    "autoprefixer": "postcss dist/css/pro-layout.css --use autoprefixer -r",
+    "autoprefixer:compressed": "postcss dist/css/pro-layout.min.css --use autoprefixer -r",
+    "build:compressed": "yarn sass:compressed && yarn autoprefixer:compressed",
+    "build:css": "yarn sass && yarn autoprefixer",
+    "build": "yarn build:css && yarn build:compressed && yarn copy:sass",
+    "start:example": "live-server --port=3131 --entry-file=./examples/basic/ --watch=./examples/basic/,./dist/",
+    "start": "concurrently \" yarn start:example\" \" yarn sass:watch\"",
+    "docs": "yarn --cwd ./docs start"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.1",
+    "concurrently": "^5.2.0",
+    "copyfiles": "^2.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "gh-pages": "^2.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.14.1",
+    "postcss": "^7.0.32",
+    "postcss-cli": "^7.1.1",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2"
+  },
+  "keywords": [
+    "Layout",
+    "css",
+    "responsive"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{scss}": [
+      "eslint --fix"
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    "> .5% or last 2 versions"
+  ]
+}
