@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.pro-layout .header {
+  background-color: #a5abc3;
+  padding: 10px;
+}
+
+.pro-layout .sidebar {
+  background-color: #bec4de;
+  padding: 10px;
+}
+.pro-layout .content {
+  background-color: #d5d9ec;
+  padding: 10px;
+}
+
+.pro-layout .footer {
+  background-color: #a5abc3;
+  padding: 10px;
+}
