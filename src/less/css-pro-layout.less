@@ -30,11 +30,12 @@
   }
 }
 
-.pro-layout {
+.layout {
   min-height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  flex-grow: 1;
   &.has-sidebar {
     flex-direction: row;
   }
@@ -87,16 +88,6 @@
   }
   .content {
     flex-grow: 1;
-  }
-
-  .layout {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    position: relative;
-    &.has-sidebar {
-      flex-direction: row;
-    }
   }
 
   .overlay {

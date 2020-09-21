@@ -9,4 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Initial Pre release
 
-- Initial pre release of the pro layout
+- Initial pre release of the css pro layout
