@@ -1,12 +1,15 @@
-# [CSS Pro Layout](https://www.npmjs.com/package/css-pro-layout)
+# CSS Pro Layout
 
 CSS library for building responsive and customizable page layouts
 
 [![npm][version]][npm-url]
 [![License][license]][npm-url]
 
+[npm-url]: https://www.npmjs.com/package/css-pro-layout
 [version]: https://img.shields.io/npm/v/css-pro-layout.svg?style=flat-square
 [license]: https://img.shields.io/github/license/azouaoui-med/css-pro-layout?style=flat-square
+
+<hr>
 
 ## Documentation
 
@@ -19,6 +22,9 @@ Please refer to the [Getting Started guide](https://azouaoui-med.github.io/css-p
 ## Demos
 
 - [**Vanilla js** | Sandbox](https://codesandbox.io/s/css-pro-layout-vanilla-js-mpqds?file=/index.html)
+- [**React js** | Sandbox](https://codesandbox.io/s/css-pro-layout-react-js-sgl3q?file=/src/App.js)
+- [**vue js** | Sandbox](https://codesandbox.io/s/css-pro-layout-vue-hmdjp)
+- [**Angular** | Sandbox](https://codesandbox.io/s/css-pro-layout-angular-9vkt2)
 
 ## Change Log
 
