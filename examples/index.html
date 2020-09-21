@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/css/css-pro-layout.css" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        margin: 10px;
+      }
+
+      .wrapper {
+        height: 500px;
+        margin: 20px;
+      }
+
+      .layout .header {
+        background-color: #a5abc3;
+        padding: 20px;
+      }
+
+      .layout .content {
+        background-color: #bec4de;
+        padding: 20px;
+      }
+
+      .layout .footer {
+        background-color: #a5abc3;
+        padding: 20px;
+      }
+
+      .layout .sidebar {
+        background-color: #9198b5;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="layout">
+        <header class="header">Header</header>
+        <main class="content">
+          content
+        </main>
+        <footer class="footer">Footer</footer>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="layout">
+        <header class="header">Header</header>
+        <div class="layout has-sidebar">
+          <aside class="sidebar break-point-xs toggled">
+            Aside
+          </aside>
+          <main class="content">
+            content
+          </main>
+          <div class="overlay"></div>
+        </div>
+        <footer class="footer">Footer</footer>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="layout">
+        <div class="layout has-sidebar">
+          <aside class="sidebar">Aside</aside>
+          <div class="layout">
+            <header class="header">Header</header>
+            <main class="content">Main</main>
+          </div>
+        </div>
+        <footer class="footer">Footer</footer>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="layout">
+        <header class="header">Header</header>
+        <div class="layout has-sidebar">
+          <aside class="sidebar break-point-lg">
+            sidebar
+          </aside>
+          <div class="overlay"></div>
+          <div class="layout">
+            <main class="content">
+              content
+            </main>
+            <footer class="footer">Footer</footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="layout has-sidebar">
+        <aside class="sidebar break-point-lg">
+          sidebar
+        </aside>
+        <div class="overlay"></div>
+        <div class="layout">
+          <header class="header">Header</header>
+          <main class="content">
+            content
+          </main>
+          <footer class="footer">Footer</footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
