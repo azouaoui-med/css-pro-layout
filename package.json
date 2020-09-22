@@ -23,7 +23,9 @@
     "build:css": "yarn sass && yarn autoprefixer",
     "build": "yarn build:css && yarn build:compressed && yarn copy:sass && yarn copy:less",
     "start:example": "live-server --port=3131 --entry-file=./examples/ --watch=./examples/basic/,./dist/",
-    "start": "concurrently \" yarn start:example\" \" yarn sass:watch\""
+    "start": "concurrently \" yarn start:example\" \" yarn sass:watch\"",
+    "start:website": "yarn --cwd ./website start",
+    "deploy:website": "yarn --cwd ./website build && gh-pages -d website/build"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.1",
