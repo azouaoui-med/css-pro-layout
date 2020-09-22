@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2020-09-22
+
+- Initial stable release
+
+## [1.0.0-alpha.1] - 2020-09-21
+
 ### Initial Pre release
 
 - Initial pre release of the css pro layout

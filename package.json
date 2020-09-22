@@ -1,12 +1,12 @@
 {
   "name": "css-pro-layout",
-  "version": "1.0.0-alpha.1",
-  "description": "Css library for building responsive and customizable layouts",
-  "main": "dist/css/pro-layout.css",
+  "version": "1.0.0",
+  "description": "CSS library for building responsive and customizable page layouts",
+  "main": "dist/css/css-pro-layout.css",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/azouaoui-med/pro-layout.git",
+  "repository": "https://github.com/azouaoui-med/css-pro-layout.git",
   "author": "Mohamed Azouaoui <azouaoui.med@gmail.com>",
   "license": "MIT",
   "private": false,
