@@ -6,21 +6,21 @@ body {
   font-family: sans-serif;
 }
 
-.pro-layout .header {
+.layout .header {
   background-color: #a5abc3;
   padding: 10px;
 }
 
-.pro-layout .sidebar {
+.layout .sidebar {
   background-color: #bec4de;
   padding: 10px;
 }
-.pro-layout .content {
+.layout .content {
   background-color: #d5d9ec;
   padding: 10px;
 }
 
-.pro-layout .footer {
+.layout .footer {
   background-color: #a5abc3;
   padding: 10px;
 }
