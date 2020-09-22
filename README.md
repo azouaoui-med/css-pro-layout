@@ -17,7 +17,45 @@ For full documentation, visit [https://azouaoui-med.github.io/css-pro-layout](ht
 
 ## Getting started
 
-Please refer to the [Getting Started guide](https://azouaoui-med.github.io/css-pro-layout/docs) to set up CSS Pro Layout.
+You can install css pro layout with NPM or Yarn
+
+### NPM
+
+```shell
+npm install css-pro-layout
+```
+
+### Yarn
+
+```shell
+yarn add css-pro-layout
+```
+
+Import `css-pro-layout.css` into your module
+
+```js
+import 'css-pro-layout/dist/css/css-pro-layout.css';
+```
+
+### CDN
+
+You can also use the CDN link from [unpkg.com](https://unpkg.com)
+
+```html
+<link href="https://unpkg.com/css-pro-layout/dist/css/css-pro-layout.min.css" rel="stylesheet" />
+```
+
+### Basic Usage
+
+```html
+<div class="layout">
+  <header class="header">Header</header>
+  <main class="content">Content</main>
+  <footer class="footer">Footer</footer>
+</div>
+```
+
+Please refer to the [Examples page](https://azouaoui-med.github.io/docs/getting-started/examples) for more use cases.
 
 ## Demos
 
