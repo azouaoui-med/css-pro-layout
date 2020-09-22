@@ -55,7 +55,7 @@ You can also use the CDN link from [unpkg.com](https://unpkg.com)
 </div>
 ```
 
-Please refer to the [Examples page](https://azouaoui-med.github.io/docs/getting-started/examples) for more use cases.
+Please refer to the [Examples page](https://azouaoui-med.github.io/css-pro-layout/docs/getting-started/examples) for more use cases.
 
 ## Demos
 
