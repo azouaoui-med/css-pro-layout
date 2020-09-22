@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.layout .header {
+  background-color: #a5abc3;
+  padding: 10px;
+}
+
+.layout .sidebar {
+  background-color: #bec4de;
+  padding: 10px;
+}
+.layout .content {
+  background-color: #d5d9ec;
+  padding: 10px;
+}
+
+.layout .footer {
+  background-color: #a5abc3;
+  padding: 10px;
+}
