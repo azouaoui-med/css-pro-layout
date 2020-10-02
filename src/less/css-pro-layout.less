@@ -100,6 +100,42 @@
     z-index: 99;
     display: none;
   }
+
+  .sidebar-toggler {
+    display: none;
+    // TODO : replace the code below with a for loop
+    &.break-point-xs {
+      @media (max-width: @breakpoint-xs) {
+        display: initial;
+      }
+    }
+    &.break-point-sm {
+      @media (max-width: @breakpoint-sm) {
+        display: initial;
+      }
+    }
+    &.break-point-md {
+      @media (max-width: @breakpoint-md) {
+        display: initial;
+      }
+    }
+    &.break-point-lg {
+      @media (max-width: @breakpoint-lg) {
+        display: initial;
+      }
+    }
+    &.break-point-xl {
+      @media (max-width: @breakpoint-xl) {
+        display: initial;
+      }
+    }
+    &.break-point-xxl {
+      @media (max-width: @breakpoint-xxl) {
+        display: initial;
+      }
+    }
+  }
+
   &.fixed-header {
     .header {
       position: fixed;
