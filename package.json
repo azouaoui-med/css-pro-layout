@@ -1,6 +1,6 @@
 {
   "name": "css-pro-layout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS library for building responsive and customizable page layouts",
   "main": "dist/css/css-pro-layout.css",
   "files": [

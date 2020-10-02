@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2020-10-02
+
+- Add sidebar-toggler styles in less
+
 ## [1.0.0] - 2020-09-22
 
 - Initial stable release
