@@ -46,11 +46,14 @@
   }
   .sidebar {
     width: $sidebar-width;
+    min-width: $sidebar-width;
     transition: width, left, right, 0.3s;
     &.collapsed {
       width: $sidebar-collapsed-width;
+      min-width: $sidebar-collapsed-width;
     }
 
+    // TODO : replace the code below with a for loop
     &.break-point-xs {
       @media (max-width: $breakpoint-xs) {
         @include break-point;
@@ -103,6 +106,7 @@
 
   .sidebar-toggler {
     display: none;
+    // TODO : replace the code below with a for loop
     &.break-point-xs {
       @media (max-width: $breakpoint-xs) {
         display: initial;
@@ -161,6 +165,7 @@
   &.rtl {
     direction: rtl;
     .sidebar {
+      // TODO : replace the code below with a for loop
       &.break-point-xs {
         @media (max-width: $breakpoint-xs) {
           @include break-point-rtl;

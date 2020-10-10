@@ -46,9 +46,11 @@
   }
   .sidebar {
     width: @sidebar-width;
+    min-width: @sidebar-width;
     transition: width, left, right, 0.3s;
     &.collapsed {
       width: @sidebar-collapsed-width;
+      min-width: @sidebar-collapsed-width;
     }
 
     &.break-point-xs {
