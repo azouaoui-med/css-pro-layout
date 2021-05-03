@@ -15,7 +15,23 @@
       display: block;
     }
   }
+
+  ~ .layout {
+    .header {
+      width: 100% !important;
+      transition: none;
+    }
+  }
 }
+
+$breakpoints: (
+  'break-point-xs': $breakpoint-xs,
+  'break-point-sm': $breakpoint-sm,
+  'break-point-md': $breakpoint-md,
+  'break-point-lg': $breakpoint-lg,
+  'break-point-xl': $breakpoint-xl,
+  'break-point-xxl': $breakpoint-xxl,
+);
 
 @mixin break-point-rtl {
   left: auto;
@@ -30,16 +46,26 @@
   }
 }
 
+@mixin setBreakPoint($name, $value) {
+  &.#{$name} {
+    @media (max-width: $value) {
+      @include break-point;
+    }
+  }
+}
+
 .layout {
   min-height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   flex-grow: 1;
+
   &.has-sidebar {
     flex-direction: row;
   }
   .header {
+    transition: width, 0.3s;
     height: $header-height;
     min-height: $header-height;
     position: relative;
@@ -53,36 +79,8 @@
       min-width: $sidebar-collapsed-width;
     }
 
-    // TODO : replace the code below with a for loop
-    &.break-point-xs {
-      @media (max-width: $breakpoint-xs) {
-        @include break-point;
-      }
-    }
-    &.break-point-sm {
-      @media (max-width: $breakpoint-sm) {
-        @include break-point;
-      }
-    }
-    &.break-point-md {
-      @media (max-width: $breakpoint-md) {
-        @include break-point;
-      }
-    }
-    &.break-point-lg {
-      @media (max-width: $breakpoint-lg) {
-        @include break-point;
-      }
-    }
-    &.break-point-xl {
-      @media (max-width: $breakpoint-xl) {
-        @include break-point;
-      }
-    }
-    &.break-point-xxl {
-      @media (max-width: $breakpoint-xxl) {
-        @include break-point;
-      }
+    @each $key, $value in $breakpoints {
+      @include setBreakPoint($key, $value);
     }
   }
   .footer {
@@ -106,46 +104,12 @@
 
   .sidebar-toggler {
     display: none;
-    // TODO : replace the code below with a for loop
-    &.break-point-xs {
-      @media (max-width: $breakpoint-xs) {
-        display: initial;
-      }
-    }
-    &.break-point-sm {
-      @media (max-width: $breakpoint-sm) {
-        display: initial;
-      }
-    }
-    &.break-point-md {
-      @media (max-width: $breakpoint-md) {
-        display: initial;
-      }
-    }
-    &.break-point-lg {
-      @media (max-width: $breakpoint-lg) {
-        display: initial;
-      }
-    }
-    &.break-point-xl {
-      @media (max-width: $breakpoint-xl) {
-        display: initial;
-      }
-    }
-    &.break-point-xxl {
-      @media (max-width: $breakpoint-xxl) {
-        display: initial;
-      }
-    }
-  }
-  &.fixed-header {
-    .header {
-      position: fixed;
-      width: 100%;
-      z-index: 1;
-      ~ .layout,
-      ~ .content {
-        margin-top: $header-height;
+
+    @each $key, $value in $breakpoints {
+      &.#{$key} {
+        @media (max-width: $value) {
+          display: initial;
+        }
       }
     }
   }
@@ -162,38 +126,38 @@
     }
   }
 
+  &.fixed-header {
+    .header {
+      position: fixed;
+      width: 100%;
+      z-index: 2;
+      ~ .layout,
+      ~ .content {
+        margin-top: $header-height;
+      }
+    }
+    &.fixed-sidebar {
+      .header {
+        width: calc(100% - #{$sidebar-width});
+      }
+      .sidebar.collapsed {
+        ~ .layout {
+          .header {
+            width: calc(100% - #{$sidebar-collapsed-width});
+          }
+        }
+      }
+    }
+  }
+
   &.rtl {
     direction: rtl;
     .sidebar {
-      // TODO : replace the code below with a for loop
-      &.break-point-xs {
-        @media (max-width: $breakpoint-xs) {
-          @include break-point-rtl;
-        }
-      }
-      &.break-point-sm {
-        @media (max-width: $breakpoint-sm) {
-          @include break-point-rtl;
-        }
-      }
-      &.break-point-md {
-        @media (max-width: $breakpoint-md) {
-          @include break-point-rtl;
-        }
-      }
-      &.break-point-lg {
-        @media (max-width: $breakpoint-lg) {
-          @include break-point-rtl;
-        }
-      }
-      &.break-point-xl {
-        @media (max-width: $breakpoint-xl) {
-          @include break-point-rtl;
-        }
-      }
-      &.break-point-xxl {
-        @media (max-width: $breakpoint-xxl) {
-          @include break-point-rtl;
+      @each $key, $value in $breakpoints {
+        &.#{$key} {
+          @media (max-width: $value) {
+            @include break-point-rtl;
+          }
         }
       }
     }

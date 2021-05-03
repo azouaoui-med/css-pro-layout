@@ -15,6 +15,22 @@
       display: block;
     }
   }
+
+  ~ .layout {
+    .header {
+      width: 100% !important;
+      transition: none;
+    }
+  }
+}
+
+.breakpoints() {
+  break-point-xs: @breakpoint-xs;
+  break-point-sm: @breakpoint-sm;
+  break-point-md: @breakpoint-md;
+  break-point-lg: @breakpoint-lg;
+  break-point-xl: @breakpoint-xl;
+  break-point-xxl: @breakpoint-xxl;
 }
 
 .break-point-rtl() {
@@ -30,16 +46,26 @@
   }
 }
 
+.setBreakPoint(@name; @value) {
+  &.@{name} {
+    @media (max-width: @value) {
+      .break-point();
+    }
+  }
+}
+
 .layout {
   min-height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   flex-grow: 1;
+
   &.has-sidebar {
     flex-direction: row;
   }
   .header {
+    transition: width, 0.3s;
     height: @header-height;
     min-height: @header-height;
     position: relative;
@@ -53,36 +79,9 @@
       min-width: @sidebar-collapsed-width;
     }
 
-    &.break-point-xs {
-      @media (max-width: @breakpoint-xs) {
-        .break-point();
-      }
-    }
-    &.break-point-sm {
-      @media (max-width: @breakpoint-sm) {
-        .break-point();
-      }
-    }
-    &.break-point-md {
-      @media (max-width: @breakpoint-md) {
-        .break-point();
-      }
-    }
-    &.break-point-lg {
-      @media (max-width: @breakpoint-lg) {
-        .break-point();
-      }
-    }
-    &.break-point-xl {
-      @media (max-width: @breakpoint-xl) {
-        .break-point();
-      }
-    }
-    &.break-point-xxl {
-      @media (max-width: @breakpoint-xxl) {
-        .break-point();
-      }
-    }
+    each(.breakpoints(), {
+      .setBreakPoint(@key, @value);
+    });
   }
   .footer {
     height: @footer-height;
@@ -105,49 +104,14 @@
 
   .sidebar-toggler {
     display: none;
-    // TODO : replace the code below with a for loop
-    &.break-point-xs {
-      @media (max-width: @breakpoint-xs) {
-        display: initial;
-      }
-    }
-    &.break-point-sm {
-      @media (max-width: @breakpoint-sm) {
-        display: initial;
-      }
-    }
-    &.break-point-md {
-      @media (max-width: @breakpoint-md) {
-        display: initial;
-      }
-    }
-    &.break-point-lg {
-      @media (max-width: @breakpoint-lg) {
-        display: initial;
-      }
-    }
-    &.break-point-xl {
-      @media (max-width: @breakpoint-xl) {
-        display: initial;
-      }
-    }
-    &.break-point-xxl {
-      @media (max-width: @breakpoint-xxl) {
-        display: initial;
-      }
-    }
-  }
 
-  &.fixed-header {
-    .header {
-      position: fixed;
-      width: 100%;
-      z-index: 1;
-      ~ .layout,
-      ~ .content {
-        margin-top: @header-height;
+    each(.breakpoints(), {
+      &.@{key} {
+        @media (max-width: @value) {
+          display: initial;
+        }
       }
-    }
+    });
   }
 
   &.fixed-sidebar {
@@ -162,39 +126,40 @@
     }
   }
 
+  &.fixed-header {
+    .header {
+      position: fixed;
+      width: 100%;
+      z-index: 2;
+      ~ .layout,
+      ~ .content {
+        margin-top: @header-height;
+      }
+    }
+    &.fixed-sidebar {
+      .header {
+        width: calc(100% - @sidebar-width);
+      }
+      .sidebar.collapsed {
+        ~ .layout {
+          .header {
+            width: calc(100% - @sidebar-collapsed-width);
+          }
+        }
+      }
+    }
+  }
+
   &.rtl {
     direction: rtl;
     .sidebar {
-      &.break-point-xs {
-        @media (max-width: @breakpoint-xs) {
-          .break-point-rtl();
+      each(.breakpoints(), {
+        &.@{key} {
+          @media (max-width: @value) {
+            .break-point-rtl();
+          }
         }
-      }
-      &.break-point-sm {
-        @media (max-width: @breakpoint-sm) {
-          .break-point-rtl();
-        }
-      }
-      &.break-point-md {
-        @media (max-width: @breakpoint-md) {
-          .break-point-rtl();
-        }
-      }
-      &.break-point-lg {
-        @media (max-width: @breakpoint-lg) {
-          .break-point-rtl();
-        }
-      }
-      &.break-point-xl {
-        @media (max-width: @breakpoint-xl) {
-          .break-point-rtl();
-        }
-      }
-      &.break-point-xxl {
-        @media (max-width: @breakpoint-xxl) {
-          .break-point-rtl();
-        }
-      }
+      });
     }
   }
 }
