@@ -39,7 +39,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
     "live-server": "^1.2.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "postcss": "^7.0.32",
     "postcss-cli": "^7.1.1",
     "prettier": "^2.0.5",
